@@ -80,13 +80,14 @@ sudo mkdir /root/.nos
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
 echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
 echo "rpcallowip=127.0.0.1" >> /root/.nos/nos.conf
+echo "rpcport=7271" >> /root/.nos/nos.conf
 echo "listen=1" >> /root/.nos/nos.conf
 echo "server=1" >> /root/.nos/nos.conf
 echo "daemon=1" >> /root/.nos/nos.conf
 echo "maxconnections=250" >> /root/.nos/nos.conf
 echo "masternode=1" >> /root/.nos/nos.conf
-echo "masternodeaddr$IP:7788" >> /root/.nos/nos.conf
-echo "externalip$IP:7788" >> /root/.nos/nos.conf
+echo "masternodeaddr$IP:7272" >> /root/.nos/nos.conf
+echo "externalip$IP:7272" >> /root/.nos/nos.conf
 echo "masternodeprivkey=$KEY" >> /root/.nos/nos.conf
 echo -e "${GREEN}STARTING THE DAEMON${NC}"
 cd /root
