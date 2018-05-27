@@ -95,4 +95,4 @@ sudo nosd
 sleep 2
 echo ""
 echo ""
-echo -e "Thank you for installing the new and improved Marble wallet.  Please move onto the ${RED}NEXT${NC} step."
+echo -e "Thank you for installing the NOS daemon.  Please move onto the ${RED}NEXT${NC} step."
