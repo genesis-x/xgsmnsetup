@@ -62,7 +62,7 @@ sudo apt-get install -y ufw
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
 sudo ufw allow 7272/tcp
-sudo ufw allow 7271/tcp
+sudo ufw allow 7171/tcp
 sudo ufw logging on
 echo "y" | sudo ufw enable
 sleep 2
@@ -80,7 +80,7 @@ sudo mkdir /root/.nos
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
 echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
 echo "rpcallowip=127.0.0.1" >> /root/.nos/nos.conf
-echo "rpcport=7271" >> /root/.nos/nos.conf
+echo "rpcport=7171" >> /root/.nos/nos.conf
 echo "listen=1" >> /root/.nos/nos.conf
 echo "server=1" >> /root/.nos/nos.conf
 echo "daemon=1" >> /root/.nos/nos.conf
