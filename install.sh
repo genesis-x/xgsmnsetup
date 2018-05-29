@@ -61,8 +61,7 @@ sleep 5
 sudo apt-get install -y ufw
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
-sudo ufw allow 7272/tcp
-sudo ufw allow 7171/tcp
+sudo ufw allow 2727/tcp
 sudo ufw logging on
 echo "y" | sudo ufw enable
 sleep 2
