@@ -37,9 +37,9 @@ cd && sudo apt-get -y install git && sudo git clone https://github.com/testiface
 1. Open your wallet
 2. Go to Tools -> Open Masternode Configuration File
 3. Enter the following on one single line after the example configuration
-```<alias> <ip>:7272 <private_key> <tx_id> <index>```
+```<alias> <ip>:2727 <private_key> <tx_id> <index>```
 4. It should look something like this:
-``` MN1 66.65.43.32:7272 87dfjnKNfdjNlwomdmKKMdkaNIE a3eofJJkdlMlfKokfmalmofO 0```
+``` MN1 66.65.43.32:2727 87dfjnKNfdjNlwomdmKKMdkaNIE a3eofJJkdlMlfKokfmalmofO 0```
 5. Save and close the file and restart your wallet.
 
 # Part 4 - Starting the Masternode
