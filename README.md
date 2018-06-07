@@ -24,7 +24,7 @@ Stable and cheap host here https://www.vultr.com/?ref=7310523 or at mnhost.io
 
 1. Connect to your linux vps AS ROOT (AWS USERS USE sudo -i TO LOGIN AS ROOT), copy and paste the following line into your VPS.  Double click to highlight the entire line, copy it, and right click into Putty or Shift + Insert to paste.
 ```
-cd && sudo apt-get -y install git && sudo git clone https://github.com/testiface/nosmnsetup.git && cd nosmnsetup/ && sudo bash install.sh 
+cd && sudo apt-get -y install git && sudo git clone https://github.com/genesis-x/xgsmnsetup.git && cd xgsmnsetup/ && sudo bash install.sh 
 ```
 2. follow the prompts closely and don't mess it up!
 3. Move to Part 3
@@ -56,10 +56,14 @@ cd && sudo apt-get -y install git && sudo git clone https://github.com/testiface
 
 *Official XGS Discord: https://discord.gg/za7pzmw
 
-DONATIONS HERE: 
+DONATIONS HERE:
+
 XGS: GQwDa3xs8VFwupGjX6iRMrKmE9F76dPd68
+
 BTC: 17cPwGfgdH1kvK6cXfY9mcc9CNwaKJBEia
+
 LTC: Le87xeg5sATsxEUnFt2YG5w13b6DuX6ufd
+
 ETH: 0x7e99722e395d75a9511959035ecb7edd9ec589df
 
 
