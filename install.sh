@@ -85,8 +85,8 @@ echo "daemon=1" >> /root/.genesisx/genesisx.conf.conf
 echo "maxconnections=250" >> /root/.genesisx/genesisx.conf.conf
 echo "masternode=1" >> /root/.enesisx/genesisx.conf.conf
 echo "masternodeaddr$IP:5555" >> /root/.genesisx/genesisx.conf.conf
-echo "externalip$IP:5555" >> /root/.enesisx/genesisx.conf.conf
-echo "masternodeprivkey=$KEY" >> /root/.enesisx/genesisx.conf.conf
+echo "externalip$IP:5555" >> /root/.genesisx/genesisx.conf.conf
+echo "masternodeprivkey=$KEY" >> /root/.genesisx/genesisx.conf.conf
 echo -e "${GREEN}STARTING THE DAEMON${NC}"
 cd /root
 sudo genesisxd
