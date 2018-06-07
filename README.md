@@ -25,8 +25,9 @@ Stable and cheap host here https://www.vultr.com/?ref=7310523 or at http://mnhos
 ```
 cd && sudo apt-get -y install git && sudo git clone https://github.com/genesis-x/xgsmnsetup.git && cd xgsmnsetup/ && sudo bash install.sh 
 ```
-2. follow the prompts closely and don't mess it up!
-3. Move to Part 3
+2. Follow the prompts closely and don't mess it up!
+3. After the XGS wallet starts on your vps, run genesisx-cli getinfo several times, until you see the blocks match your local wallet.
+4. Move to Part 3
 
 # Part 3 - Editing your Windows Config File
 
@@ -36,22 +37,24 @@ cd && sudo apt-get -y install git && sudo git clone https://github.com/genesis-x
 ```<alias> <ip>:5555 <private_key> <tx_id> <index>```
 4. It should look something like this:
 ``` MN1 66.65.43.32:5555 892rg92FT99gLZT852P2vYGvqB5sE9Es2y4FfwK8MhCd6fWBBQ2 dee318aad4cd4548f5589fe7025a6db643e2baa9beda7035a7fac1432e1c1e8d 0```
-5. Save and close the file and restart your wallet.
+5. Save and close the file and restart your wallet. Now, if the masternode.conf was correctly edited, you should see your masternode in the masternodes tab. If the wallet fails to start, you used an incorrect syntax. Look again at the example provided.
 
 # Part 4 - Starting the Masternode
 
 1. In your wallet, go to Tools -> Debug Console
-2. Enter ```startmasternode alias 0 <alias>``` with ```<alias>``` being the name of your masternode from Part 3
+2. Enter ```startmasternode alias false <alias>``` with ```<alias>``` being the name of your masternode from Part 3
 3. Enjoy!  You can start this process over again for another MN on a fresh Linux VPS!
+4. You can also start your wallet by going to the masternodes tab, click on your masternode and then hit START ALIAS button on the bottom left.
 
 # Part 5 - Checking Masternode Status
 
-1. After running the command in step 4, go back to your VPS
+1. After running the command in part 4, go back to your VPS to make sure your node has successfully started.
 2. Enter ```cd``` to get back to your root directory
 3. Enter ```genesisx-cli masternode status```
-4. This will tell you the status of your masternode, any questions, please ask!
+4. This will tell you the status of your masternode!
+5. In about 10-15 minutes, active time should go on positive in your masternodes tab in the local wallet. Also, your masternode's IP should be visible on http://xgs.mn.zone/
 
-# Bronate if this helped
+# Donate if this helped
 
 *Official XGS Discord: https://discord.gg/za7pzmw
 
