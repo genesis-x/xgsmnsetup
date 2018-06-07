@@ -77,17 +77,17 @@ sleep 2
 echo -e "${GREEN}Creating the ${RED}Configuration File Now${NC}"
 sleep 2
 sudo mkdir /root/.genesisx
-echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf.conf
-echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf.conf
-echo "rpcallowip=127.0.0.1" >> /root/.genesisx/genesisx.conf.conf
-echo "listen=1" >> /root/.genesisx/genesisx.conf.conf
-echo "server=1" >> /root/.genesisx/genesisx.conf.conf
-echo "daemon=1" >> /root/.genesisx/genesisx.conf.conf
-echo "maxconnections=250" >> /root/.genesisx/genesisx.conf.conf
-echo "masternode=1" >> /root/.genesisx/genesisx.conf.conf
-echo "masternodeaddr$IP:5555" >> /root/.genesisx/genesisx.conf.conf
-echo "externalip$IP:5555" >> /root/.genesisx/genesisx.conf.conf
-echo "masternodeprivkey=$KEY" >> /root/.genesisx/genesisx.conf.conf
+echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf
+echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf
+echo "rpcallowip=127.0.0.1" >> /root/.genesisx/genesisx.conf
+echo "listen=1" >> /root/.genesisx/genesisx.conf
+echo "server=1" >> /root/.genesisx/genesisx.conf
+echo "daemon=1" >> /root/.genesisx/genesisx.conf
+echo "maxconnections=250" >> /root/.genesisx/genesisx.conf
+echo "masternode=1" >> /root/.genesisx/genesisx.conf
+echo "masternodeaddr$IP:5555" >> /root/.genesisx/genesisx.conf
+echo "externalip$IP:5555" >> /root/.genesisx/genesisx.conf
+echo "masternodeprivkey=$KEY" >> /root/.genesisx/genesisx.conf
 echo -e "${GREEN}STARTING THE DAEMON${NC}"
 cd /root
 sudo genesisxd
