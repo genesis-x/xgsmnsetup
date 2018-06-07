@@ -1,7 +1,7 @@
 # XGS Masternode Install Script
 # Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
 
-Stable and cheap host here https://www.vultr.com/?ref=7310523 or at mnhost.io
+Stable and cheap host here https://www.vultr.com/?ref=7310523 or at http://mnhost.io/
 
 
 # Part 1 - Sending Collateral Coins
