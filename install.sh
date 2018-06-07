@@ -2,7 +2,7 @@
 
 echo "*******************************"
 echo "*                             *"
-echo "*       NOS Masternode        *"
+echo "*       XGS Masternode        *"
 echo "*           SETUP             *"
 echo "*            BY               *"
 echo "*           Tpot              *"
@@ -27,7 +27,7 @@ read KEY
 sleep 2
 echo ""
 echo ""
-echo -e "${RED}PLEASE KEEP YOUR HANDS AND FEET INSIDE THE RIDE AT ALL TIMES!${NC}"
+echo -e "${RED}PLEASE WAIT FOR INSTALL!${NC}"
 sleep 5
 
 sudo apt-get update -y
@@ -44,7 +44,7 @@ libboost-program-options-dev libboost-system-dev libboost-test-dev libboost-thre
 bsdmainutils libdb4.8++-dev libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev libdb5.3++ unzip libzmq5
 
 sleep 2
-echo -e "${GREEN}Downloading more ram!${NC}"
+echo -e "${GREEN}Creating swap file!${NC}"
 sleep 5 
 cd /var
 sudo touch swap.img
@@ -56,41 +56,41 @@ sudo free
 sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
 cd
 sleep 2
-echo -e "${GREEN}Keeping out all the ${RED}HAXORZ!${NC}"
+echo -e "${GREEN}Adding ports to the ${RED}FIREWALL!${NC}"
 sleep 5
 sudo apt-get install -y ufw
 sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
-sudo ufw allow 2727/tcp
+sudo ufw allow 5555/tcp
 sudo ufw logging on
 echo "y" | sudo ufw enable
 sleep 2
 echo ""
 echo ""
-echo -e "${GREEN}Moving stuff where it ${RED}NEEDS${NC} to be"
-sudo chmod +x /root/nosmnsetup/nosd /root/nosmnsetup/nos-cli
-sudo mv /root/nosmnsetup/nosd /root/nosmnsetup/nos-cli /usr/local/bin
+echo -e "${GREEN}Moving files ${RED}NEEDS${NC} to the right directories"
+sudo chmod +x /root/xgsmnsetup/genesisxd /root/xgsmnsetup/genesisx-cli
+sudo mv /root/xgsmnsetup/genesisxd /root/xgsmnsetup/genesisx-cli /usr/local/bin
 echo ""
 echo ""
 sleep 2
 echo -e "${GREEN}Creating the ${RED}Configuration File Now${NC}"
 sleep 2
-sudo mkdir /root/.nos
-echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
-echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.nos/nos.conf
-echo "rpcallowip=127.0.0.1" >> /root/.nos/nos.conf
-echo "listen=1" >> /root/.nos/nos.conf
-echo "server=1" >> /root/.nos/nos.conf
-echo "daemon=1" >> /root/.nos/nos.conf
-echo "maxconnections=250" >> /root/.nos/nos.conf
-echo "masternode=1" >> /root/.nos/nos.conf
-echo "masternodeaddr$IP:2727" >> /root/.nos/nos.conf
-echo "externalip$IP:2727" >> /root/.nos/nos.conf
-echo "masternodeprivkey=$KEY" >> /root/.nos/nos.conf
+sudo mkdir /root/.genesisx
+echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf.conf
+echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /root/.genesisx/genesisx.conf.conf
+echo "rpcallowip=127.0.0.1" >> /root/.enesisx/genesisx.conf.conf
+echo "listen=1" >> /root/.enesisx/genesisx.conf.conf
+echo "server=1" >> /root/.enesisx/genesisx.conf.conf
+echo "daemon=1" >> /root/.enesisx/genesisx.conf.conf
+echo "maxconnections=250" >> /root/.enesisx/genesisx.conf.conf
+echo "masternode=1" >> /root/.enesisx/genesisx.conf.conf
+echo "masternodeaddr$IP:5555" >> /root/.enesisx/genesisx.conf.conf
+echo "externalip$IP:5555" >> /root/.enesisx/genesisx.conf.conf
+echo "masternodeprivkey=$KEY" >> /root/.enesisx/genesisx.conf.conf
 echo -e "${GREEN}STARTING THE DAEMON${NC}"
 cd /root
-sudo nosd
+sudo genesisxd
 sleep 2
 echo ""
 echo ""
-echo -e "Thank you for installing the NOS daemon.  Please move onto the ${RED}NEXT${NC} step."
+echo -e "Thank you for installing the XGS daemon.  Please move onto the ${RED}NEXT${NC} step."
