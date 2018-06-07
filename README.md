@@ -1,10 +1,7 @@
-# NOS Masternode Install Script
+# XGS Masternode Install Script
 # Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
 
-Stable and cheap host here https://m.do.co/c/b93026fab810
-
-NOS address if this helped you and you love me: NWrcgc4eSAqrrp5J7XUGiTvY7bZCs9Nify
-
+Stable and cheap host here https://www.vultr.com/?ref=7310523 or at mnhost.io
 
 # Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
 
@@ -13,7 +10,7 @@ NOS address if this helped you and you love me: NWrcgc4eSAqrrp5J7XUGiTvY7bZCs9Ni
 1. Open your Windows wallet - MAKE SURE IT IS SYNCED WITH THE NETWORK
 2. Go to Tools -> Debug Console
 3. Type: getaccountaddress MN# (# is your masternode number you want to use)
-4. Send 35000 NOS to this address
+4. Send 5000 XGS to this address. Wait for 6 confirmations.
 5. Go to Tools -> Debug Console
 6. Type: masternode outputs (This can take a minute before an output is shown)
 7. Type: masternode genkey
@@ -37,9 +34,9 @@ cd && sudo apt-get -y install git && sudo git clone https://github.com/testiface
 1. Open your wallet
 2. Go to Tools -> Open Masternode Configuration File
 3. Enter the following on one single line after the example configuration
-```<alias> <ip>:2727 <private_key> <tx_id> <index>```
+```<alias> <ip>:5555 <private_key> <tx_id> <index>```
 4. It should look something like this:
-``` MN1 66.65.43.32:2727 87dfjnKNfdjNlwomdmKKMdkaNIE a3eofJJkdlMlfKokfmalmofO 0```
+``` MN1 66.65.43.32:5555 892rg92FT99gLZT852P2vYGvqB5sE9Es2y4FfwK8MhCd6fWBBQ2 dee318aad4cd4548f5589fe7025a6db643e2baa9beda7035a7fac1432e1c1e8d 0```
 5. Save and close the file and restart your wallet.
 
 # Part 4 - Starting the Masternode
@@ -52,21 +49,20 @@ cd && sudo apt-get -y install git && sudo git clone https://github.com/testiface
 
 1. After running the command in step 4, go back to your VPS
 2. Enter ```cd``` to get back to your root directory
-3. Enter ```nos-cli masternode status```
+3. Enter ```genesisx-cli masternode status```
 4. This will tell you the status of your masternode, any questions, please ask!
 
 # Bronate if this helped
 
-*Official NOS Discord: https://discord.gg/US3t6aj
+*Official XGS Discord: https://discord.gg/za7pzmw
 
-MY NOS ADDRESS: NWrcgc4eSAqrrp5J7XUGiTvY7bZCs9Nify
-
-*Discord in case you need help from me personally: https://discord.gg/MwE4Fuc
-  - I support multiple coins, please state which you need help with
+DONATIONS HERE: 
+XGS: GQwDa3xs8VFwupGjX6iRMrKmE9F76dPd68
+BTC: 17cPwGfgdH1kvK6cXfY9mcc9CNwaKJBEia
+LTC: Le87xeg5sATsxEUnFt2YG5w13b6DuX6ufd
+ETH: 0x7e99722e395d75a9511959035ecb7edd9ec589df
 
 
 # Recommended Tools
 
 - Putty - Easy to use and customizable SSH client.
-- SuperPutty - This allows you to have multiple Putty tabs open in one window, allowing you to easily organize and switch between masternode servers.
-
