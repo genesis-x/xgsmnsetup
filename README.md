@@ -11,7 +11,7 @@ Stable and cheap host here https://www.vultr.com/?ref=7310523 or at http://mnhos
 3. Type: getaccountaddress MN# (# is your masternode number you want to use)
 4. Send 5000 XGS to this address. Wait for 6 confirmations.
 5. Go to Tools -> Debug Console
-6. Type: masternode outputs (This can take a minute before an output is shown)
+6. Type: masternode outputs
 7. Type: masternode genkey
 7. Save your TX ID (The first number) and your Index Number (Second number, either a 1 or 0)
 8. Save your generated key as well as this will be needed in your VPS as your private key
