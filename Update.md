@@ -8,7 +8,7 @@ wget https://github.com/genesis-x/xgsmnsetup/raw/master/xgsudpate.sh
 chmod +x xgsudpate.sh  
 bash xgsudpate.sh  
 
-When it is done installing, you can check if your node was updated to by using:
+When it is done installing, you can check if your node was updated by using:
 
 genesisx-cli | grep version  
 
