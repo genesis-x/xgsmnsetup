@@ -8,7 +8,6 @@ chmod +x xgsudpate.sh
 bash xgsudpate.sh
 
 
-
 # XGS Masternode Install Script
 # Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
 
