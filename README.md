@@ -1,13 +1,3 @@
-# XGS Linux Masternode Update Script - Wallet version 1.0.3
-# Use this script over an existing GenesisX Masternode, Version 1.0.2
-
-Login to your Linux VPS as root and type these command lines, one by one, then hit enter.
-cd /root
-wget https://github.com/genesis-x/xgsmnsetup/raw/master/xgsudpate.sh
-chmod +x xgsudpate.sh
-bash xgsudpate.sh
-
-
 # XGS Masternode Install Script
 # Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
 
