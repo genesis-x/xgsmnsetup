@@ -1,5 +1,5 @@
 # XGS Linux Masternode Update Script - Wallet version 1.3.0
-# Use this script over an existing GenesisX Masternode, Version 1.2.0
+# Use this script over an existing GenesisX Masternode, Version 1.2.1
 
 Login to your Linux VPS as root. Copy these command lines, paste them into the vps/terminal/console, then hit enter:  
 
