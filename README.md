@@ -26,7 +26,7 @@ Stable and cheap host here https://www.vultr.com/?ref=7310523 or at http://mnhos
 cd && sudo apt-get -y install git && sudo git clone https://github.com/genesis-x/xgsmnsetup.git && cd xgsmnsetup/ && sudo bash install.sh 
 ```
 2. Follow the prompts closely and don't mess it up!
-3. After the XGS wallet starts on your vps, run ```watch genesisx-cli getinfo``` several times, until you see the blocks match your local wallet.
+3. After the XGS wallet starts on your vps, run ```watch genesisx-cli getinfo```, until you see the blocks match your local wallet.
 4. Move to Part 3
 
 # Part 3 - Editing your Windows Config File
