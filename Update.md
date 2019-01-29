@@ -13,4 +13,4 @@ When it is done installing, you can check if your node was updated by using:
 genesisx-cli | grep version  
 
 You should get  
-GenesisX Core RPC client version v1.3.0.0-722fb98-dirty
+GenesisX Core RPC client version v1.4.0.0-722fb98-dirty
