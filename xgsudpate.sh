@@ -65,7 +65,7 @@ wget -q https://github.com/genesis-x/genesis-x/files/2799605/genesisx-linux.zip
 echo -e "    Done."
 
 echo -e "${GREEN}==>${NC} Installing new binaries."
-tar --overwrite -C /usr/local/bin/ -zxf /tmp/GenesisX-1.3.0-x86_64-linux.tar.gz
+tar --overwrite -C /usr/local/bin/ -zxf /tmp/GenesisX-1.4.0-x86_64-linux.tar.gz
 echo -e "    Done."
 
 #STARTING GENESIS X SERVER
