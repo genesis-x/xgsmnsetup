@@ -61,14 +61,14 @@ echo -e "    Backup located at ${YELLOW}/root/wallet.dat.${DATE}${NC}.\n"
 
 # Installing new update.
 echo -e "${GREEN}==>${NC} Downloading new binaries. This can take a while depending on the network speed."
-wget -q https://github.com/genesis-x/genesis-x/files/2799605/genesisx-linux.zip
+wget -q https://github.com/genesis-x/genesis-x/files/2799605/genesisx-linux.zip -O /tmp/GenesisX-1.4.0-x86_64-linux.tar.gz
 echo -e "    Done."
 
 echo -e "${GREEN}==>${NC} Installing new binaries."
-tar --overwrite -C /usr/local/bin/ -zxf /tmp/GenesisX-1.4.0-x86_64-linux.tar.gz
+tar --overwrite -C /usr/local/bin/ -zxf /tmp/GenesisX-1.4.0-x86_64-linux.tar.gz 
 echo -e "    Done."
 
-#STARTING GENESIS X SERVER
+#STARTING GENESIS X SERVER 
 echo -e "${GREEN}==>${NC} Starting Genesis-X. Please be patient."
 ${GENESISXD} > /dev/null
 
