@@ -61,7 +61,7 @@ echo -e "    Backup located at ${YELLOW}/root/wallet.dat.${DATE}${NC}.\n"
 
 # Installing new update.
 echo -e "${GREEN}==>${NC} Downloading new binaries. This can take a while depending on the network speed."
-wget -q https://github.com/genesis-x/genesis-x/releases/download/v1.3.0/GenesisX-1.3.0-x86_64-linux.tar.gz -O /tmp/GenesisX-1.3.0-x86_64-linux.tar.gz
+wget -q https://github.com/genesis-x/genesis-x/files/2799605/genesisx-linux.zip
 echo -e "    Done."
 
 echo -e "${GREEN}==>${NC} Installing new binaries."
@@ -86,4 +86,4 @@ echo -e "    The server has now started.\n"
 echo -e "${GREEN}==>${NC} Current version is: \n $(${GENESISXCLI} getinfo | grep -i version)\n"
 echo -e "${GREEN}==>${NC} You can check the status of your masternode by running ${GREEN} genesisx-cli masternode status${NC}\n\
     If it isn't status 4, please start it from your cold wallet again.\n"
-echo -e "\n ${YELLOW}.:: THANK YOU FOR TAKING THE TIME TO UPGRADE TO GENESISX WALLET V1.3.0, IT IS NOW COMPLETE! ::.${NC}"
+echo -e "\n ${YELLOW}.:: THANK YOU FOR TAKING THE TIME TO UPGRADE TO GENESISX WALLET V1.4.0, IT IS NOW COMPLETE! ::.${NC}"
