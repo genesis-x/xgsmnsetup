@@ -1,74 +1,128 @@
-# XGS Masternode Install Script
-# Use this script on a fresh install of Ubuntu 16.04 - MUST BE 16.04 x64
+# GenesisX_MN_Script
+Installation Script for Installing up to 8 GenesisX Masternodes (XGS Version 1.4.0)
 
-Stable and cheap host here https://www.vultr.com/?ref=7310523 or at http://mnhost.io/
+This script is for use on fresh installations of Ubuntu 16.04 x64 only; or Ubuntu 16.04 x64 installations that were installed by other Sburns/NullEntry (Github = https://github.com/sburns1369).  All scripts where tested on a Vultr VPS
 
+Shameless Referral link = https://www.vultr.com/?ref=7846384
 
-# Part 1 - Sending Collateral Coins
+Script improvements where pushed with the latest update.  If you have 3 masternodes, and want to have 4, select the installation script for 4 (assuming they where installed previously with my scripts) and it will detect the first 3 masternodes, and than prompt and build a 4th masternode, etc.
 
-1. Open your Windows wallet - MAKE SURE IT IS SYNCED WITH THE NETWORK
-2. Go to Tools -> Debug Console
-3. Type: getaccountaddress MN# (# is your masternode number you want to use)
-4. Send 5000 XGS to this address. Wait for 6 confirmations.
-5. Go to Tools -> Debug Console
-6. Type: masternode outputs
-7. Type: masternode genkey
-7. Save your TX ID (The first number) and your Index Number (Second number, either a 1 or 0)
-8. Save your generated key as well as this will be needed in your VPS as your private key
-9. Save these with a notepad
-10. Close the wallet
-11. Move to Part 2 for now
+If all your masternodes go offline, just re-run the script to restart them as well.  So if you want to restart 6 masternodes, select 6, and it will stop and re-start them.
 
-# Part 2 - Getting your Linux VPS Started Up (Read all instructions and follow prompts closely)
+*********  Quick Start - Experienced Users ***************
 
-1. Connect to your linux vps AS ROOT (AWS USERS USE sudo -i TO LOGIN AS ROOT), copy and paste the following line into your VPS.  Double click to highlight the entire line, copy it, and right click into Putty or Shift + Insert to paste.
-```
-cd && sudo apt-get -y install git && sudo git clone https://github.com/genesis-x/xgsmnsetup.git && cd xgsmnsetup/ && sudo bash install.sh 
-```
-2. Follow the prompts closely and don't mess it up!
-3. After the XGS wallet starts on your vps, run ```watch genesisx-cli getinfo```, until you see the blocks match your local wallet.
-4. Move to Part 3
+Copy and Paste:
 
-# Part 3 - Editing your Windows Config File
+bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/GenesisX_MN_Script/master/xgs.sh)
 
-1. Open your wallet
-2. Go to Tools -> Open Masternode Configuration File
-3. Enter the following on one single line after the example configuration
-```<alias> <ip>:5555 <private_key> <tx_id> <index>```
-4. It should look something like this:
-``` MN1 66.65.43.32:5555 892rg92FT99gLZT852P2vYGvqB5sE9Es2y4FfwK8MhCd6fWBBQ2 dee318aad4cd4548f5589fe7025a6db643e2baa9beda7035a7fac1432e1c1e8d 0```
-5. Save and close the file and restart your wallet. Now, if the masternode.conf was correctly edited, you should see your masternode in the masternodes tab. If the wallet fails to start, you used an incorrect syntax. Look again at the example provided.
+Hit "y" to start when prompted enter masternode private key(s)
+Wait about 5 minutes, and hit enter when prompted about 5 minutes in (programming dependencies installation)
 
-# Part 4 - Starting the Masternode
+Sync time is around 3 hours for one masternodes
+Sync time was over 10 hours for all four.
 
-1. In your wallet, go to Tools -> Debug Console
-2. Enter ```startmasternode alias false <alias>``` with ```<alias>``` being the name of your masternode from Part 3
-3. Enjoy!  You can start this process over again for another MN on a fresh Linux VPS!
-4. You can also start your wallet by going to the masternodes tab, click on your masternode and then hit START ALIAS button on the bottom left.
+Check MN 1
+genesisx-cli -datadir=/home/genesisx/.genesisx mnsync status
+Check MN 2
+genesisx-cli -datadir=/home/genesisx2/.genesisx mnsync status
+Check MN 3
+genesisx-cli -datadir=/home/genesisx3/.genesisx mnsync status
+Check MN 4
+genesisx-cli -datadir=/home/genesisx4/.genesisx mnsync status
 
-# Part 5 - Checking Masternode Status
+**********  Full Set Up **********
 
-1. After running the command in part 4, go back to your VPS to make sure your node has successfully started.
-2. Enter ```cd``` to get back to your root directory
-3. Enter ```genesisx-cli masternode status```
-4. This will tell you the status of your masternode!
-5. In about 10-15 minutes, active time should go on positive in your masternodes tab in the local wallet. Also, your masternode's IP should be visible on http://xgs.mn.zone/
+Open a new Notepad on your PC
+Open your Windows wallet
+Wait for it to fully Sync to the network (Your coins may not appear till fully sync'd
+Click "Receive"
+Enter MN1 under label
+Hit "Request Payment"
+A small window should open and hit "Copy Address"
+Paste the address in the fresh Notepad
 
-# Donate if this helped
+***Repeat that process 4 times, if making 4 masternodes, I suggest MN2, MN3, MN4 for logical reasons as label) ***
 
-*Official XGS Discord: https://discord.gg/za7pzmw
+Now send the collateral of exactly 5000 coins, do not include transmission cost in the send amount
+  -it will be automatically deducted.
+Wait for each transaction to have 6 confirmations.
+  -you can hold your cursor over the transactions under "transactions" to see number of confirms
 
-DONATIONS HERE:
+Go to Tools -> Debug Console
+Type: masternode genkey
+  - Repeat that for every MN you are making, give it a moment or two between them.
 
-XGS: GQwDa3xs8VFwupGjX6iRMrKmE9F76dPd68
+Type: masternode outputs
+   -Match up the Genkey to the TX ID earlier and copy the the TX IDs (First set of numbers) and Index Numbers (Either 1 or a 0, after TX ID) to the notepad file.
 
-BTC: 17cPwGfgdH1kvK6cXfY9mcc9CNwaKJBEia
+Save these with a notepad
 
-LTC: Le87xeg5sATsxEUnFt2YG5w13b6DuX6ufd
+Connect to your Linux VPS as root
 
-ETH: 0x7e99722e395d75a9511959035ecb7edd9ec589df
+Copy and Paste the command below
+bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/GenesisX_MN_Script/master/xgs.sh)
 
+Follow on Screen Directions
+(The Masternode Private keys should be in the notepad file from earlier, enter those when prompted)
+Stick around for about to hit "enter" when prompted in red lettering.
+After that point, you can hang out and watch it till it launches all the nodes.
+Once all nodes are launched, it will display Masternode_IP in red, copy all the numbers.
+(Example,  Masternode_IP: 155.138.161.248:5555)
+(So copy 155.138.161.248:5555)
+Put the copied numbers in the notepad file you made earlier.
+It will around 2 hours roughly for it to fully sync.
+  -Longer if you are doing more nodes.
+While we wait we can configure the Windows Wallet.
+Go back to (or open) your windows wallet.
+Click on "Tools"
+Select "Masternode Configuration File" from the lsit.
+In the Notepad that Opens titled "masternode.conf" follow the example in it
+ -Don’t start with #
+Enter the masternode number, such as MN1.
+Than the Masternode_IP from earlier, 155.138.161.248:5555
+Than the generated Private Key, such as 87pA7iveBQatch4EAqNKubNANjeKzKCjA8E85ZH67SDW3wxxxxx
+The TX ID from sending the coins, something like 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d032445xxxxx
+and then lastly the 0 or 1 from the Index Number from earlier.
+Hit enter, and enter the information for the next Masternode, if your entering more than 1.
+Once complete, save the file.
+Close the Wallet
+ -Make sure you close it, not just minimize it.
+Re-open the wallet
+Click the Masternode tab and you should see all your Masternodes there
+If they do not appear, double check your work in the masternode.conf
+go back to your VPS and occasionally check the Masternodes Sync'ing status with the commands...
 
-# Recommended Tools
+To Check MN 1
+genesisx-cli -datadir=/home/genesisx/.genesisx mnsync status
+To Check MN 2
+genesisx-cli -datadir=/home/genesisx2/.genesisx mnsync status
+To Check MN 3
+genesisx-cli -datadir=/home/genesisx3/.genesisx mnsync status
+To Check MN 4
+genesisx-cli -datadir=/home/genesisx4/.genesisx mnsync status
 
-- Putty - Easy to use and customizable SSH client.
+We are watching for the "IsBlockchainSynced" to equals true, not false.
+This will take some time, relax.
+Once  "IsBlockchainSynced" : true
+Go back to the Wallet and hit "Start all"
+It may take around another 15 to 20 minutes, or even instantly to activate the Masternode.
+
+You can check the status of your masternodes with the commands below
+
+To Check MN 1
+genesisx-cli -datadir=/home/genesisx/.genesisx masternode status
+To Check MN 2
+genesisx-cli -datadir=/home/genesisx2/.genesisx masternode status
+To Check MN 3
+genesisx-cli -datadir=/home/genesisx3/.genesisx masternode status
+To Check MN 4
+genesisx-cli -datadir=/home/genesisx4/.genesisx masternode status
+
+Need help? Have a suggestion? Have a request?
+Find Sburns1369#1584 on Discord - https://discord.gg/YhJ8v3g
+Website will hopefully by up early March 2019
+
+Tips are always appreciated
+GenesisX address: GZXonqnH2cjPgQZL59urDZS2CBzxPzoQ1j
+LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H
+BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93
