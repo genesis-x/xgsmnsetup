@@ -86,20 +86,31 @@ The TX ID from sending the coins, something like 2bcd3c84c84f87eaa86e4e56834c929
 and then lastly the 0 or 1 from the Index Number from earlier.
 Hit enter, and enter the information for the next Masternode, if your entering more than 1.
 Once complete, save the file.
+
 Close the Wallet
+
  -Make sure you close it, not just minimize it.
+ 
 Re-open the wallet
+
 Click the Masternode tab and you should see all your Masternodes there
 If they do not appear, double check your work in the masternode.conf
 go back to your VPS and occasionally check the Masternodes Sync'ing status with the commands...
 
 To Check MN 1
+
 genesisx-cli -datadir=/home/genesisx/.genesisx mnsync status
+
 To Check MN 2
+
 genesisx-cli -datadir=/home/genesisx2/.genesisx mnsync status
+
 To Check MN 3
+
 genesisx-cli -datadir=/home/genesisx3/.genesisx mnsync status
+
 To Check MN 4
+
 genesisx-cli -datadir=/home/genesisx4/.genesisx mnsync status
 
 We are watching for the "IsBlockchainSynced" to equals true, not false.
@@ -111,12 +122,19 @@ It may take around another 15 to 20 minutes, or even instantly to activate the M
 You can check the status of your masternodes with the commands below
 
 To Check MN 1
+
 genesisx-cli -datadir=/home/genesisx/.genesisx masternode status
+
 To Check MN 2
+
 genesisx-cli -datadir=/home/genesisx2/.genesisx masternode status
+
 To Check MN 3
+
 genesisx-cli -datadir=/home/genesisx3/.genesisx masternode status
+
 To Check MN 4
+
 genesisx-cli -datadir=/home/genesisx4/.genesisx masternode status
 
 Need help? Have a suggestion? Have a request?
