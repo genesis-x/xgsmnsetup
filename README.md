@@ -44,9 +44,9 @@ and so on and so on.
 
 ***Repeat that process 4 times, if making 4 masternodes, I suggest MN2, MN3, MN4 for logical reasons as label) ***
 
-Now send the collateral of exactly 5000 coins, do not include transmission cost in the send amount
+- Now send the collateral of exactly 5000 coins, do not include transmission cost in the send amount
   -it will be automatically deducted.
-Wait for each transaction to have 6 confirmations.
+- Wait for each transaction to have 6 confirmations.
   -you can hold your cursor over the transactions under "transactions" to see number of confirms
 
 Go to Tools -> Debug Console
@@ -55,37 +55,37 @@ Type: masternode outputs
 
 Save all these on a notepad for adding to the masternode configuration file later.
 
-Connect to your Linux VPS as root
+**Connect to your Linux VPS as root**
 
-Copy and Paste the command below
+**Copy and Paste the command below
 
 bash <(curl -Ls https://raw.githubusercontent.com/sburns1369/GenesisX_MN_Script/master/xgs.sh)
 
-Follow on Screen Directions
-Hit "y" to start and select the amount of MN you would like to install.
-Wait about 5 minutes, and hit enter when prompted about 5 minutes in (programming dependencies installation)
-This process will generate a set of IP addresses and genkeys for each MN you installed.
-Put the numbers in the notepad file you made earlier combining them with the TX ID and TX output like so.
-  e.g MN01 98.456.15.885:5555 xxxxxxit9Bf3X9Z1movYXtYXxxxxxxxxqNscHQxbN363Mb3bCPo xxxxxxxxxd35dc068fd43ac068fbd42f2d7cdcab139d3e010cf0e5xxxxxxxx1d 0
-      MN02 [2q02:xxxx:2030:4328:10]:5555 xxxxxxaBn7DrP9ts7nExG5qbbUR13xxxxxxxxxxxgXa8Lsbk9ym xxxxxxxx7adb4fbd6ce0e56072cc1c703a1af7xxxxxxxxb919bde90a4553174a 0
-      MN03 [2q02:xxxx:2044:8749:15]:5555 xxxxxxxzr8EDzoUBoXtqFXbBFkUi8xxxxxxxxj7kFqDsUdd3CAS d9f4a9bf4d428638fxxxxxxx3c589ef9cb4b2fab9c9b13817891fabf7c197ee4 1
-      MN04 [2q02:xxxx:2099:4157:99]:5555 xxxxxot3FrB4W5YmSczxq59Dxxxxxxxxxxxk1EJ96UHa4vcLnVt abb7xxxxxxxxx2b10ccaccdf6ea9e6536f06b0172a977c16c94c3a8xxxxxxxx1 1
-It will around 2 hours roughly for it to fully sync.
-  -Longer if you are doing more nodes.
-While we wait we can configure the Windows Wallet.
-Go back to (or open) your windows wallet.
-Click on "Tools"
-Select "Masternode Configuration File" from the list.
-In the Notepad that Opens titled "masternode.conf" follow the example in it.
-Enter the combined MN configurations as stated in the above example.
-Hit enter, and enter the information for the next Masternode, if your entering more than 1.
-Once complete, save the file and close.
+- Follow on Screen Directions
+- Hit "y" to start and select the amount of MN you would like to install.
+- Wait about 5 minutes, and hit enter when prompted about 5 minutes in (programming dependencies installation)
+- This process will generate a set of IP addresses and genkeys for each MN you installed.
+- Put the numbers in the notepad file you made earlier combining them with the TX ID and TX output like so.
+  - e.g MN01 98.456.15.885:5555 xxxxxxit9Bf3X9Z1movYXtYXxxxxxxxxqNscHQxbN363Mb3bCPo xxxxxxxxxd35dc068fd43ac068fbd42f2d7cdcab139d3e010cf0e5xxxxxxxx1d 0
+  - MN02 [2q02:xxxx:2030:4328:10]:5555 xxxxxxaBn7DrP9ts7nExG5qbbUR13xxxxxxxxxxxgXa8Lsbk9ym xxxxxxxx7adb4fbd6ce0e56072cc1c703a1af7xxxxxxxxb919bde90a4553174a 0
+  - MN03 [2q02:xxxx:2044:8749:15]:5555 xxxxxxxzr8EDzoUBoXtqFXbBFkUi8xxxxxxxxj7kFqDsUdd3CAS d9f4a9bf4d428638fxxxxxxx3c589ef9cb4b2fab9c9b13817891fabf7c197ee4 1
+  - MN04 [2q02:xxxx:2099:4157:99]:5555 xxxxxot3FrB4W5YmSczxq59Dxxxxxxxxxxxk1EJ96UHa4vcLnVt abb7xxxxxxxxx2b10ccaccdf6ea9e6536f06b0172a977c16c94c3a8xxxxxxxx1 1
+- It will around 2 hours roughly for it to fully sync.
+  - Longer if you are doing more nodes.
+- While we wait we can configure the Windows Wallet.
+- Go back to (or open) your windows wallet.
+- Click on "Tools"
+- Select "Masternode Configuration File" from the list.
+- In the Notepad that Opens titled "masternode.conf" follow the example in it.
+- Enter the combined MN configurations as stated in the above example.
+- Hit enter, and enter the information for the next Masternode, if your entering more than 1.
+- Once complete, save the file and close.
 
-Close the Wallet
+**Close the Wallet
 
  -Make sure you close it, not just minimize it.
  
-Re-open the wallet
+**Re-open the wallet
 
 Click the Masternode tab and you should see all your Masternodes there
 If they do not appear, double check your work in the masternode.conf
@@ -107,11 +107,11 @@ To Check MN 4
 
 genesisx-cli -datadir=/home/genesisx4/.genesisx mnsync status
 
-We are watching for the "IsBlockchainSynced" to equals true, not false.
-This will take some time, relax.
-Once  "IsBlockchainSynced" : true
-Go back to the Wallet and hit "Start all"
-It may take around another 15 to 20 minutes, or even instantly to activate the Masternode.
+- We are watching for the "IsBlockchainSynced" to equals true, not false.
+- This will take some time, relax.
+- Once  "IsBlockchainSynced" : true
+- Go back to the Wallet and hit "Start all"
+- It may take around another 15 to 20 minutes, or even instantly to activate the Masternode.
 
 You can check the status of your masternodes with the commands below
 
@@ -131,10 +131,10 @@ To Check MN 4
 
 genesisx-cli -datadir=/home/genesisx4/.genesisx masternode status
 
-Need help? Have a suggestion? Have a request?
-Find Sburns1369#1584 on his Discord - https://discord.gg/YhJ8v3g or the XGS team members on our community discord https://discord.gg/QVZM4RJwVn
+- Need help? Have a suggestion? Have a request?
+- Find Sburns1369#1584 on his Discord - https://discord.gg/YhJ8v3g or the XGS team members on our community discord https://discord.gg/QVZM4RJwVn
 
-Tips are always appreciated and go straight to the developer.
-XGS address: GZXonqnH2cjPgQZL59urDZS2CBzxPzoQ1j
-LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H
-BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93
+- Tips are always appreciated and go straight to the developer.
+- XGS address: GZXonqnH2cjPgQZL59urDZS2CBzxPzoQ1j
+- LTC address: MUdDdVr4Az1dVw47uC4srJ31Ksi5SNkC7H
+- BTC address: 32FzghE1yUZRdDmCkj3bJ6vJyXxUVPKY93
