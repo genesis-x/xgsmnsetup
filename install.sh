@@ -88,10 +88,10 @@ echo "masternode=1" >> /root/.genesisx/genesisx.conf
 echo "masternodeaddr$IP:5555" >> /root/.genesisx/genesisx.conf
 echo "externalip$IP:5555" >> /root/.genesisx/genesisx.conf
 echo "masternodeprivkey=$KEY" >> /root/.genesisx/genesisx.conf
-echo "addnode=xgs.seeds.mn.zone" >> /root/.genesisx/genesisx.conf
-echo "addnode=xgs.mnseeds.com" >> /root/.genesisx/genesisx.conf
-echo "addnode=144.202.51.218:5555" >> /root/.genesisx/genesisx.conf
-echo "addnode=108.61.132.146:5555" >> /root/.genesisx/genesisx.conf
+echo "addnode=144.91.114.36:5555" >> /root/.genesisx/genesisx.conf
+echo "addnode=167.86.97.185:5555" >> /root/.genesisx/genesisx.conf
+echo "addnode=144.126.139.47:5555" >> /root/.genesisx/genesisx.conf
+echo "addnode=144.126.139.46:5555" >> /root/.genesisx/genesisx.conf
 echo -e "${GREEN}STARTING THE DAEMON${NC}"
 cd /root
 sudo genesisxd
