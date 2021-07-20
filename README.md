@@ -15,7 +15,9 @@ and
 
 take note of this information and place in a text file, later on we will need them.
 
-In linux on your VPS after you have successfully logged in, create a swap file which will help the VPS run later on in its life.
+Next is to choose a VPS provider. We highly recommend Contabo (https://contabo.com/en/vps/) $5 service, as a reliable VPS provider. You can also choose Vultr (https://www.vultr.com/?ref=7623826).
+
+In the linux VPS after you have successfully logged in, create a swap file which will help the VPS run later on in its life.
 
 `fallocate -l 2G /swapfile`
 
